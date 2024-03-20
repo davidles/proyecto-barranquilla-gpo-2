@@ -1,0 +1,20 @@
+.portada{
+    width: 100vw;
+    height: 500px;
+    padding: 50px;
+    background: url('/img/portada.jpg');
+
+    display: flex;
+    align-items: center;
+
+}
+
+.portada > h3{
+    text-align: justify;
+    width: 45%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.62);
+    color: rgb(229, 227, 227);
+    font-weight: 900;
+    font-size: 5rem;
+}
