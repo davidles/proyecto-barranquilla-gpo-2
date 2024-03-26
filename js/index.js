@@ -9,14 +9,22 @@ const api = {
     }
 };
 
+
+
+
 const cardsContainer = document.querySelector('#cards-container');
+const loadingContainer = document.querySelector('#loading');
+
 const limit = 6;
 let offset = 0;
 let loading = false;
 
-const loadMoreAttractions = () => {
+const loadMoreAttractions = async () => {
+    const getTotal = await api.getTouristicAttraction() 
+
     if (!loading) {
         loading = true;
+        loadingContainer.innerHTML = ''
         return api.getTouristicAttraction()
             .then((resp) => resp.slice(offset, offset + limit))
             .then((info) => {
@@ -36,6 +44,7 @@ const loadMoreAttractions = () => {
                 });
             });
     }
+
 };
 
 const checkScroll = () => {
