@@ -9,9 +9,6 @@ const api = {
     }
 };
 
-
-
-
 const cardsContainer = document.querySelector('#cards-container');
 const loadingContainer = document.querySelector('#loading');
 
@@ -19,8 +16,7 @@ const limit = 6;
 let offset = 0;
 let loading = false;
 
-const loadMoreAttractions = async () => {
-    const getTotal = await api.getTouristicAttraction() 
+const loadMoreAttractions = async () => { 
 
     if (!loading) {
         loading = true;
