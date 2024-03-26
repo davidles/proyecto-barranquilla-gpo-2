@@ -80,6 +80,20 @@ const searchForm = () =>{
                             </div>
                         `;
                     });
+                })
+                .catch(() =>{
+                     cardsContainer.innerHTML += `
+                    <div class="card">
+                    <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Búsqueda no encontrada</h5>
+                    <button id="reload-button"  class="btn btn-info">Traer todos</button>
+                    </div>
+                    </div>
+                    `;
+                    document.getElementById("reload-button").addEventListener("click", () => {
+                        location.reload();
+                    });
+                    
                 });
         }
         
@@ -87,6 +101,8 @@ const searchForm = () =>{
     })
     
 }
+
+const reload = () => location.reload();
 
 const checkScroll = () => {
     const scrollPosition = window.innerHeight + window.scrollY;
