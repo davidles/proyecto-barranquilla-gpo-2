@@ -84,15 +84,13 @@ const searchForm = () =>{
                 .catch(() =>{
                      cardsContainer.innerHTML += `
                     <div class="card">
-                    <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Búsqueda no encontrada</h5>
-                    <button id="reload-button"  class="btn btn-info">Traer todos</button>
-                    </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-center">Búsqueda no encontrada</h5>
+                        
+                        </div>
                     </div>
                     `;
-                    document.getElementById("reload-button").addEventListener("click", () => {
-                        location.reload();
-                    });
+
                     
                 });
         }
@@ -102,7 +100,9 @@ const searchForm = () =>{
     
 }
 
-const reload = () => location.reload();
+document.getElementById("reload-button").addEventListener("click", () => {
+    location.reload();
+});
 
 const checkScroll = () => {
     const scrollPosition = window.innerHeight + window.scrollY;
